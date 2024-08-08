@@ -1,10 +1,10 @@
 import React from 'react';
-//import '../estilos/domicilio_cliente.css';
+import '../estilos/domicilio_cliente.css';
 const DomicilioCliente = () =>{
     return(
     <div>
-    <header className="header">
-        <div className="logo">
+    <header className="header1">
+        <div className="logo2">
         <img src="https://i.ibb.co/dbTBHkz/LOGO-JEFE-DE-PRODUCCI-N.jpg" alt="LOGO-JEFE-DE-PRODUCCI-N"/>
         </div>
         <nav>
@@ -13,7 +13,7 @@ const DomicilioCliente = () =>{
             <li><a href="carrito.js">Carrito</a></li>
         </ul>
         </nav>
-        <div className="container">
+        <div className="container1">
         <input type="text" placeholder="Buscar Producto" className="buscar" />
         <div className="btn2">
             <i className="fa fa-search" aria-hidden="true" />
@@ -58,8 +58,8 @@ const DomicilioCliente = () =>{
         </form>
         </div>
     </div>
-    <footer className="footer">
-        <div className="logo">
+    <footer className="footer1">
+        <div className="logo1">
         <img src="https://i.ibb.co/dbTBHkz/LOGO-JEFE-DE-PRODUCCI-N.jpg" alt="LOGO-JEFE-DE-PRODUCCI-N"/>
         <p className="info">Empresa de productos industriales</p>
         </div>

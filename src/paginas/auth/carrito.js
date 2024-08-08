@@ -44,7 +44,7 @@ const Carrito = () => {
                     </table>
                     <div className="row" id="cards"></div>
                 </div>
-                <div className="container1">
+                <div className="containerr1">
                     <table className="table">
                         <div style={{backgroundColor: 'rgb(202, 202, 198)', padding: 5}}><h4>Generar Compra</h4></div>
                         <thead className="head">

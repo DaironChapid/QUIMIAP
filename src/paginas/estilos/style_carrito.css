@@ -68,7 +68,7 @@
     font-weight: 400;
     color: white;
     padding: 10px 25px;
-    background-color: rgb(175, 114, 114);
+    background-color: rgb(170, 43, 43);
     border-radius: 9px;
     cursor: pointer;
     transition: background-color 0.3s;
@@ -170,7 +170,7 @@
     padding: 10px;
 }
 /*estilo para el div que esta en el section*/
-.container1{
+.containerr1{
     width: 31%;
     height: auto;
     margin: 40px;

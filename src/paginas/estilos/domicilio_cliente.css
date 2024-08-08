@@ -1,4 +1,4 @@
-*{
+/**{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -8,9 +8,9 @@
 
 body{
     background-color: white;
-}
+}*/
 /*estilo para el encabezado*/
-.header{
+.header1{
     /*justify-content: space-between;"espacio entre:*/ 
     background-color: rgb(202, 202, 198);
     display: flex;
@@ -22,51 +22,51 @@ body{
     margin-bottom: 40px;
     
 }
-.header .logo{
+.header1 .logo2{
     cursor: pointer;
 }
 
-.header .logo img{
-    width: 120px;
+.header1 .logo2 img{
+    height: 80px;
     transition: all 0.2s;
     border-radius: 50px;
 }
 /*hacer efecto en el cursor al pulsar*/
-.header .logo img:hover{
+.header1 .logo2 img:hover{
     transform: scale(1,1.5);
 }
 
 /*estilos para la lista desordenada*/
-.header .nav-links{
+.header1 .nav-links{
     list-style: none;
 }
 
-.header .nav-links li{
+.header1 .nav-links li{
     display: inline-block;
     padding: 0 5px;
 
 }
 /*estilos para los link*/
-.header .nav-links a{
+.header1 .nav-links a{
     font-size: 700;
     color:black;
     text-decoration: none;/*quitar la rayita del enlace*/
      
 }
-.header .nav-links li:hover{
+.header1 .nav-links li:hover{
     transform: scale(1,1);
 }
 
-.header .nav-links a.inicio{
+.header1 .nav-links a.inicio{
     font-size: 700;
     color: blue;
 }
 /*estilo de color para la letra al poner el pulsor encima*/
-.header .nav-links li a:hover{
+.header1 .nav-links li a:hover{
     color: rgb(153, 156, 151);
 }
 /*estilos para buton cerrar sesion*/
-.header .btn button{
+.header1 .btn button{
     font-weight: 400;
     color: white;
     padding: 10px 25px;
@@ -77,29 +77,29 @@ body{
     border: none;
     
 }
-.header .btn {
+.header1 .btn {
     margin-left: auto;
     color: rgb(153, 156, 151); 
 }
 
-.header .btn button:hover{
+.header1 .btn button:hover{
     background-color:rgb(255, 255, 255);
     color: rgb(153, 156, 151);
     transform: scale(1,1,5)
 }
 
 /*estilos para logo de usuario*/
-.header .imagen_usuario img{
+.header1 .imagen_usuario img{
     height: 50px;
     width: auto;
 }
 
 
-.header .imagen_usuario div{
+.header1 .imagen_usuario div{
     height: 50px;
     width: auto;
 }
-.header .imagen_usuario button{
+.header1 .imagen_usuario button{
     background-color:rgb(210, 211, 208); ;
     border: none;
     border-radius: 50px;
@@ -109,12 +109,12 @@ body{
     margin-left: 695px;
 
 }
-.header .imagen_usuario button:hover{
+.header1 .imagen_usuario button:hover{
     background-color:rgb(255, 255, 255);
     color: rgb(153, 156, 151);
     transform: scale(1,1,5);
 }
-.header .imagen_usuario button a{
+.header1 .imagen_usuario button a{
         padding-left: 5px;
         color: black;
         text-decoration: none;/*quitar la rayita del enlace*/
@@ -122,7 +122,7 @@ body{
 }
 
 /*estilo para la barra de navegación*/
-.container {
+.container1 {
     position: absolute; /* Permite que .container no afecte el flujo del header */
     left: 50%;
     transform: translateX(-50%); /* Centra horizontalmente */
@@ -237,7 +237,7 @@ body{
     align-items: center; /* Optional for vertical centering */
 }
 
-.footer{
+.footer1{
     background-color: rgb(202, 202, 198);
     display: flex;
     align-items: center;
@@ -247,7 +247,7 @@ body{
     border-top: 1px solid #070707;
     padding-top: 5px;
 }
-.footer .logo img{
+.footer1 .logo1 img{
     height: 80px;
     width: auto;
     transition: all 0.2s;
@@ -255,7 +255,7 @@ body{
     
 }
 /*hacer efecto en el cursor al pulsar*/
-.footer .logo img:hover{
+.footer1 .logo1  img:hover{
     transform: scale(1,1.5);
 }
 .info  {
