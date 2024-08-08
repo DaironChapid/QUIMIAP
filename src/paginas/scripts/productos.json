@@ -1,0 +1,41 @@
+[
+	{
+		"precio": 25000,
+		"id": 1,
+		"title": "Detergente Liquido",
+		"thumbnailUrl": "../img/detergenteLiquido.jpg"
+	},
+
+	{
+		"precio": 150000,
+		"id": 2,
+		"title": "Desengrasante",
+		"thumbnailUrl": "../img/desengrasante.jpg"
+	},
+
+	{
+		"precio": 15000,
+		"id": 3,
+		"title": "Cloro",
+		"thumbnailUrl": "../img/cloro.webp"
+	},
+
+	{
+		"precio": 20000,
+		"id": 4,
+		"title": "Jabón Industrial",
+		"thumbnailUrl": "../img/jabonIndustrial.jpg"
+	},
+	{
+		"precio": 18000,
+		"id": 5,
+		"title": "Limpiador de pisos",
+		"thumbnailUrl": "https://www.multiexpress.com.co/wp-content/uploads/2020/08/641-Limpiador-Desinfectante-para-Piso-2lts.jpg"
+	},
+	{
+		"precio": 2000,
+		"id": 6,
+		"title": "Cera polimerica",
+		"thumbnailUrl": "https://brillo.com.co/wp-content/uploads/2020/09/CERA_POLI_-_ECO_BRILLO_PREMIUM-01.jpg"
+	}
+]

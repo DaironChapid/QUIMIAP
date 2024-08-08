@@ -1,0 +1,70 @@
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo {
+    max-width: 150px; /* Ajusta el tamaño del logo según tus necesidades */
+}
+.nav {
+    flex-grow: 1;
+    justify-content: center;
+}
+.nav-link {
+    color: green; /* Color de las letras de los items de navegación */
+        }
+
+/* .btn-group {
+    display: flex;
+    align-items: center;
+} */
+ 
+.btn-custom {
+    border-radius: 10px; /* Mantener bordes redondeados */
+    background-color:#008000; /* Color de fondo de los botones */
+    border-color: #008000;
+    color: white; /* Color de las letras de los botones */
+} 
+
+.btn-custom:hover {
+    background-color: rgb(10, 102, 10); /* Color de fondo de los botones al pasar el mouse */
+}
+
+.carousel-item img {
+    max-height: 500px;
+    object-fit: contain;
+}
+
+.carousel-caption h5, .carousel-caption p {
+    color: black;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Agrega sombra al texto */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5); /* Cambia el color del fondo del ícono */
+    border-radius: 50%; /* Hace los íconos redondos */
+}
+.carousel-control-prev-icon {
+    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns%3D"http://www.w3.org/2000/svg" fill%3D"%23ffffff" viewBox%3D"0 0 8 8"%3E%3Cpath d%3D"M4.707 4.5l2.147-2.147a.5.5 0 0 0-.708-.708l-2.5 2.5a.5.5 0 0 0 0 .708l2.5 2.5a.5.5 0 0 0 .708-.708L4.707 4.5z"%2F%3E%3C%2Fsvg%3E');
+}
+.carousel-control-next-icon {
+    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns%3D"http://www.w3.org/2000/svg" fill%3D"%23ffffff" viewBox%3D"0 0 8 8"%3E%3Cpath d%3D"M3.293 3.5L1.146 1.353a.5.5 0 1 1 .708-.708l2.5 2.5a.5.5 0 0 1 0 .708l-2.5 2.5a.5.5 0 0 1-.708-.708L3.293 3.5z"%2F%3E%3C%2Fsvg%3E');
+}
+
+.d-md-block{
+  padding-bottom: 150px;
+  padding-left: 600px;
+}
+.d-md-block  h5{
+  color: #008000;
+  font-size: 25px;
+}
+.img1{
+  height: 400px;
+  width: 350px;
+
+}
+.img2{
+    height: 376px;
+}

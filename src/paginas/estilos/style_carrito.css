@@ -1,0 +1,188 @@
+/* *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+} */
+/*estilo para encabezado*/
+.headerr{
+    background-color: rgb(202, 202, 198);
+    display: flex;/*para que no afecte la posicion del nav*/
+    align-items: center;
+    height: 90px;
+    padding: 5px 2%;
+    border-radius: 10px;
+    position: relative; /* Añadido para que .container se posicione correctamente */
+    justify-content: space-between;
+}
+
+/*estilo para div logo*/
+.headerr .logo{
+    cursor: pointer;/*al pasar el cursor, hace un efecto*/
+}
+/*para la img del logo*/
+.headerr .logo img{
+    width: 120px;
+    transition: all 0.2s;
+    border-radius: 30px;
+    padding-left: 1px;
+}
+/*efecto al pasar el cursor, se extiente img*/
+.headerr .logo img:hover{
+    transform: scale(1,1.5);
+}
+
+.headerr .nav-Links{
+    list-style: none;
+}
+
+/*lista desordenada*/
+.headerr .nav-links li{
+    display: inline-block;/*ayuda a quitar los puntos de la lista*/
+    padding: 0 5px;
+
+}
+
+/*estilos para los link*/
+.headerr .nav-links a{
+    font-size: 700;
+    color:black;
+    text-decoration: none;/*quitar la rayita del enlace*/
+     
+}
+.headerr .nav-links li:hover{
+    transform: scale(1,1);
+}
+
+.headerr .nav-links a.inicio{
+    font-size: 700;
+    color: blue;
+}
+/*estilo de color para la letra al poner el pulsor encima*/
+.headerr .nav-links li a:hover{
+    color: rgb(153, 156, 151);
+}
+/*estilos para buton cerrar sesion*/
+.headerr .btn button{
+    font-weight: 400;
+    color: white;
+    padding: 10px 25px;
+    background-color: rgb(175, 114, 114);
+    border-radius: 9px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border: none;
+    margin-left: 500px;
+    
+}
+.headerr .btn {
+    margin-left: auto;
+    color: rgb(153, 156, 151); 
+}
+
+.headerr .btn button:hover{
+    background-color:rgb(255, 255, 255);
+    color: rgb(153, 156, 151);
+    transform: scale(1,1,5)
+}
+.containerr{
+    width: 69%;
+    margin: 40px;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd; /* Opcional: Agregar borde para visibilidad */
+}
+
+/*titulo del carrito*/
+.tituloCarrito {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.tituloCarrito h1{
+    font-size: 35px;
+}
+
+/*estilo para la tabla*/
+.table{
+    width: 100%;
+    height: auto;
+    border-collapse: collapse; /* Asegura que los bordes se fusionen */
+    margin-bottom: 20px;
+}
+
+/*estilo para las celdas del encabezado*/
+.table thead th{
+    background-color: white;
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #999696;
+    background-color:  rgb(221, 221, 219);
+}
+
+/*estilo para las celdas d el cuerpo*/
+.table tbody td{
+    background-color: white;
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #999696;
+}
+
+/*estilo para la fila  del pie d ela tabla*/
+.table tfoot th{
+    background-color: white;
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #999696;
+}
+
+/* Estilo para las filas impares */
+.table tbody tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+
+/* Estilo para las filas al pasar el cursor por encima */
+.table tbody tr:hover {
+    background-color: #e9ecef;
+}
+
+/*estilos para la img de los productos*/
+.card-img-top {
+    width: 300px;
+    height: auto;
+}
+
+.product-card {
+    width: 100px; /* Ancho fijo para cada tarjeta */
+    display: inline-block;
+}
+.card-body {
+    text-align: center; /* Centra el texto dentro de la tarjeta */
+
+}
+.btn-dark {
+    background-color: #6add27;
+    border-color: #6add27;
+    border-radius: 20px;
+    padding: 10px;
+}
+/*estilo para el div que esta en el section*/
+.container1{
+    width: 31%;
+    height: auto;
+    margin: 40px;
+    padding: 5px;
+    border-radius: 7px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);/*se utiliza para agregar sombra a un elemento */
+    max-width: 300px; /* Puedes ajustar el ancho máximo según sea necesario */
+    border: 1px solid #ddd; /* Opcional: Agregar borde para visibilidad */
+}
+.container-section{
+    display: flex;/*no afecta la posicion del div*/
+    justify-content: space-between;
+    gap: 10px; /* Espacio entre los contenedores */
+    
+}

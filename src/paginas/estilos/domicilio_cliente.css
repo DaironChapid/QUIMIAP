@@ -1,0 +1,265 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 20px;
+}
+
+body{
+    background-color: white;
+}
+/*estilo para el encabezado*/
+.header{
+    /*justify-content: space-between;"espacio entre:*/ 
+    background-color: rgb(202, 202, 198);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 85px;
+    padding: 2px 2%;
+    position: relative; /* Añadido para que .container se posicione correctamente */
+    margin-bottom: 40px;
+    
+}
+.header .logo{
+    cursor: pointer;
+}
+
+.header .logo img{
+    width: 120px;
+    transition: all 0.2s;
+    border-radius: 50px;
+}
+/*hacer efecto en el cursor al pulsar*/
+.header .logo img:hover{
+    transform: scale(1,1.5);
+}
+
+/*estilos para la lista desordenada*/
+.header .nav-links{
+    list-style: none;
+}
+
+.header .nav-links li{
+    display: inline-block;
+    padding: 0 5px;
+
+}
+/*estilos para los link*/
+.header .nav-links a{
+    font-size: 700;
+    color:black;
+    text-decoration: none;/*quitar la rayita del enlace*/
+     
+}
+.header .nav-links li:hover{
+    transform: scale(1,1);
+}
+
+.header .nav-links a.inicio{
+    font-size: 700;
+    color: blue;
+}
+/*estilo de color para la letra al poner el pulsor encima*/
+.header .nav-links li a:hover{
+    color: rgb(153, 156, 151);
+}
+/*estilos para buton cerrar sesion*/
+.header .btn button{
+    font-weight: 400;
+    color: white;
+    padding: 10px 25px;
+    background-color: rgb(226, 71, 71);
+    border-radius: 9px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border: none;
+    
+}
+.header .btn {
+    margin-left: auto;
+    color: rgb(153, 156, 151); 
+}
+
+.header .btn button:hover{
+    background-color:rgb(255, 255, 255);
+    color: rgb(153, 156, 151);
+    transform: scale(1,1,5)
+}
+
+/*estilos para logo de usuario*/
+.header .imagen_usuario img{
+    height: 50px;
+    width: auto;
+}
+
+
+.header .imagen_usuario div{
+    height: 50px;
+    width: auto;
+}
+.header .imagen_usuario button{
+    background-color:rgb(210, 211, 208); ;
+    border: none;
+    border-radius: 50px;
+    padding-right: 40px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-left: 695px;
+
+}
+.header .imagen_usuario button:hover{
+    background-color:rgb(255, 255, 255);
+    color: rgb(153, 156, 151);
+    transform: scale(1,1,5);
+}
+.header .imagen_usuario button a{
+        padding-left: 5px;
+        color: black;
+        text-decoration: none;/*quitar la rayita del enlace*/
+
+}
+
+/*estilo para la barra de navegación*/
+.container {
+    position: absolute; /* Permite que .container no afecte el flujo del header */
+    left: 50%;
+    transform: translateX(-50%); /* Centra horizontalmente */
+    display: flex;
+    align-items: center; /* Alinea verticalmente el input y el botón */
+    gap: 10px; /* Espacio entre el input y el botón */
+    padding-right: 130px;
+}
+
+/* Estilo para el input */
+.buscar {
+    outline: none;
+    box-sizing: border-box;
+    height: 60px;
+    width: 300px; /* Ajusta el ancho del input según sea necesario */
+    padding: 0 40px;
+    color: black;
+    border-radius: 50px;
+    font-size: 20px;
+    border: 1px solid;
+    transition: all 0.3s;
+}
+
+.container:hover input {
+    width: 350px;
+}
+
+/* Estilo para el botón de búsqueda */
+.btn2 {
+    width: 80px;
+    height: 80px;
+    background: rgb(60, 243, 60);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centra el ícono dentro del botón */
+}
+
+.btn2 i {
+    font-size: 25px;
+    color: rgb(255, 255, 255);
+}
+
+.btn2:hover {
+    background-color: rgb(30, 200, 30); /* Cambié el color para el efecto hover */
+}
+
+/*estilos para el form*/
+
+
+.estilo_form div{
+    width: 800px; /* Ajusta el ancho del contenedor del formulario */
+    margin: 0 auto; /* Centra el formulario horizontalmente */
+    padding: 20px; /* Espacio interno alrededor del formulario */
+    border-radius: 10px;
+    
+        
+}
+.forma_contenedor{
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en nuevas líneas si es necesario */
+    gap: 2px; /* Espacio entre las columnas */
+    
+}
+.forma_grupo {
+    flex: 1 1 45%; /* Toma el 45% del ancho del contenedor para las columnas */
+    
+}
+
+.forma_grupo label {
+    display: block;
+    margin-bottom: 8px;
+}
+.forma_grupo input,
+.forma_grupo select,
+.forma_grupo textarea {
+    
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+.forma_grupo button {
+    margin-top: auto;
+    align-self: flex-start;
+    
+}
+
+.estilo_form h1 {
+    font-size: 25px; /* Ajusta el tamaño según lo necesites */
+    margin-bottom: 20px; /* Espacio debajo del título para separar del contenido */
+    margin-bottom: 1px;
+    text-align: center;
+
+}
+
+.boton button{
+    font-weight: 400;
+    color: white;
+    padding: 10px 25px;
+    background-color: rgb(7, 160, 7);
+    border-radius: 9px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border: none;    
+}
+.boton {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Optional for vertical centering */
+}
+
+.footer{
+    background-color: rgb(202, 202, 198);
+    display: flex;
+    align-items: center;
+    height: 85px;
+    padding: 5px 2%;
+    position: relative; /* Añadido para que .container se posicione correctamente */
+    border-top: 1px solid #070707;
+    padding-top: 5px;
+}
+.footer .logo img{
+    height: 80px;
+    width: auto;
+    transition: all 0.2s;
+    border-radius: 50px;
+    
+}
+/*hacer efecto en el cursor al pulsar*/
+.footer .logo img:hover{
+    transform: scale(1,1.5);
+}
+.info  {
+    float: right;
+    padding-left: 50px;
+    padding-top: 30px;
+}

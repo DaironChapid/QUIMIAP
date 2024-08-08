@@ -1,24 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React, {Fragment} from "react";
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import Bienvenida from './paginas/auth/bienvenida';
+import Nosotros from "./paginas/auth/nosotros";
+import Contacto from "./paginas/auth/contacto";
+import MisVentas from "./paginas/auth/mis_ventas";
+import Carrito from "./paginas/auth/carrito";
+import DomicilioCliente from "./paginas/auth/domicilio_cliente";
+import UsuariosAdmin from "./paginas/auth/usuarios_admin";
+import Productos from "./paginas/auth/productos";
+import VentasAdmin from "./paginas/auth/ventas_admin";
+import DomicilioAdmin from "./paginas/auth/domicilios_admin";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      <Router>
+        <Routes>
+          <Route path='/' exact element={<Bienvenida/>}/>
+          <Route path='/nosotros.js' exact element={<Nosotros/>}/>
+          <Route path='/contacto.js' exact element={<Contacto/>}/>
+          <Route path='/mis_ventas.js' exact element={<MisVentas/>}/>
+          <Route path='/carrito.js' exact element={<Carrito/>}/>
+          <Route path='/domicilio_cliente.js' exact element={<DomicilioCliente/>}/> 
+          <Route path='/usuarios_admin.js' exact element={<UsuariosAdmin/>}/>
+          <Route path='/productos.js' exact element={<Productos/>}/>  
+          <Route path='/ventas_admin.js' exact element={<VentasAdmin/>}/> 
+          <Route path='/domicilios_admin.js' exact element={<DomicilioAdmin/>}/>        
+        </Routes>
+      </Router>
+    </Fragment>
   );
 }
 
