@@ -1,0 +1,22 @@
+{
+  "Users": [
+    {
+      "id": "1",
+      "nombre_completo": "dairon smith chapid moreno",
+      "direccion": "cr8c#1a26sur",
+      "tipo_doc": "ti",
+      "documento": "1081399564",
+      "telefono": "3202937619",
+      "correo_elec": "morenodairon78@gmail.com"
+    },
+    {
+      "id": "2030",
+      "nombre_completo": "valery",
+      "direccion": "11111",
+      "tipo_doc": "1081399567",
+      "documento": "5",
+      "telefono": "6",
+      "correo_elec": "43434343@ddd"
+    }
+  ]
+}

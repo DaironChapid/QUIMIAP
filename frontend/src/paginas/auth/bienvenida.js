@@ -1,104 +1,139 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../estilos/style_bienvenida.css';
-const Bienvenida = () =>{
-    return(
-      <div>
-        <div className="container">
 
-  <header className="py-3 mb-4 border-bottom">
-    <div className="d-flex align-items-center">
-        <img src="https://i.ibb.co/dbTBHkz/LOGO-JEFE-DE-PRODUCCI-N.jpg" alt="LOGO-JEFE-DE-PRODUCCI-N" class="logo"/>
-    </div>
-    <ul className="nav me-auto mb-2 mb-lg-0">
-      <li className="nav-item"><a href="/" className="nav-link px-2">Inicio</a></li>
-      <li className="nav-item"><a href="nosotros.js" className="nav-link px-2">Nosotros</a></li>
-      <li className="nav-item"><a href="contacto.js" className="nav-link px-2">Contacto</a></li>
-      <li className="nav-item"><a href="carrito.js" className="nav-link px-2">Carrito de compras</a></li>
-      <li className="nav-item"><a href="mis_ventas.js" className="nav-link px-2">Mis ventas</a></li>
-    </ul>
+const Bienvenida = () =>{
+
+  const [formData, setFormData] = useState({
+    nombre_completo: '',
+    direccion: '',
+    tipo_doc: '',
+    documento: '',
+    telefono: '',
+    correo_elec: ''
+  });
+
+  const handleChange = (event) => {
+    setFormData({
+      ...formData,
+      [event.target.name]: event.target.value
+    });
+  }
+
+  const enviar = async (event) => {
+    event.preventDefault();
+
+    try {
+      const response = await axios.post("http://localhost:4000/Users", formData);
+      console.log("Éxito:", response.data);
+    } catch (error) {
+      console.error("Error al enviar los datos:", error);
+    }
+  }
+
+  return(
     <div>
-      {/* Botón para abrir el modal de registro */}
-      <button type="button" className="btn btn-primary me-2 btn-custom" data-bs-toggle="modal" data-bs-target="#registerModal">
-        Regístrate
-      </button>
-      {/* Modal de registro */}
-      <div className="modal fade" id="registerModal" tabIndex={-1} aria-labelledby="registerModalLabel" aria-hidden="true">
-        <div className="modal-dialog">
-          <div className="modal-content">
-            <div className="modal-header">
-              <h1 className="modal-title fs-5" id="registerModalLabel">Regístrate</h1>
-              <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
+      <div className="container">
+        <header className="py-3 mb-4 border-bottom">
+          <div className="d-flex align-items-center">
+            <img src="https://i.ibb.co/dbTBHkz/LOGO-JEFE-DE-PRODUCCI-N.jpg" alt="LOGO-JEFE-DE-PRODUCCI-N" className="logo"/>
+          </div>
+          <ul className="nav me-auto mb-2 mb-lg-0">
+            <li className="nav-item"><Link to="/" className="nav-link px-2">Inicio</Link></li>
+            <li className="nav-item"><Link to="/nosotros" className="nav-link px-2">Nosotros</Link></li>
+            <li className="nav-item"><Link to="/contacto" className="nav-link px-2">Contacto</Link></li>
+            <li className="nav-item"><Link to="/carrito" className="nav-link px-2">Carrito de compras</Link></li>
+            <li className="nav-item"><Link to="/mis_ventas" className="nav-link px-2">Mis ventas</Link></li>
+          </ul>
+          <div>
+            <button type="button" className="btn btn-primary me-2 btn-custom" data-bs-toggle="modal" data-bs-target="#registerModal">
+              Regístrate
+            </button>
+
+            {/* Modal de registro */}
+            <div className="modal fade" id="registerModal" tabIndex={-1} aria-labelledby="registerModalLabel" aria-hidden="true">
+              <div className="modal-dialog">
+                <div className="modal-content">
+                  <div className="modal-header">
+                    <h1 className="modal-title fs-5" id="registerModalLabel">Regístrate</h1>
+                    <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
+                  </div>
+                  <div className="modal-body">
+                    <form onSubmit={enviar}>
+                      <div className="mb-3">
+                        <label htmlFor="txt1" className="form-label">Nombre completo</label>
+                        <input type="text" className="form-control" id="txt1" name="nombre_completo"
+                          value={formData.nombre_completo} onChange={handleChange} required />
+                      </div>
+                      <div className="mb-3">
+                        <label htmlFor="txt2" className="form-label">Dirección</label>
+                        <input type="text" className="form-control" id="txt2" name="direccion"
+                          value={formData.direccion} onChange={handleChange} required />
+                      </div>
+                      <div className="mb-3">
+                        <label htmlFor="txt3" className="form-label">Tipo de documento</label>
+                        <input type="text" className="form-control" id="txt3" name="tipo_doc"
+                          value={formData.tipo_doc} onChange={handleChange} required />
+                      </div>
+                      <div className="mb-3">
+                        <label htmlFor="txt4" className="form-label">Documento</label>
+                        <input type="number" className="form-control" id="txt4" name="documento"
+                          value={formData.documento} onChange={handleChange} required />
+                      </div>
+                      <div className="mb-3">
+                        <label htmlFor="txt5" className="form-label">Teléfono</label>
+                        <input type="number" className="form-control" id="txt5" name="telefono"
+                          value={formData.telefono} onChange={handleChange} required />
+                      </div>
+                      <div className="mb-3">
+                        <label htmlFor="txt6" className="form-label">Correo electrónico</label>
+                        <input type="email" className="form-control" id="txt6" name="correo_elec"
+                          value={formData.correo_elec} onChange={handleChange} required />
+                      </div>
+                      <div className="modal-footer">
+                        <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="submit" className="btn btn-primary btn-custom">Guardar</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="modal-body">
-              <form>
-                <div className="mb-3">
-                  <label htmlFor="txt1" className="form-label">Nombre completo</label>
-                  <input type="text" className="form-control" id="txt1" aria-describedby="emailHelp" required />
+
+            <button type="button" className="btn btn-primary btn-custom" data-bs-toggle="modal" data-bs-target="#loginModal">
+              Inicia sesión
+            </button>
+            {/* Modal de inicio de sesión */}
+            <div className="modal fade" id="loginModal" tabIndex={-1} aria-labelledby="loginModalLabel" aria-hidden="true">
+              <div className="modal-dialog">
+                <div className="modal-content">
+                  <div className="modal-header">
+                    <h1 className="modal-title fs-5" id="loginModalLabel">Inicia sesión</h1>
+                    <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
+                  </div>
+                  <div className="modal-body">
+                    <form>
+                      <div className="mb-3">
+                        <label htmlFor="exampleInputEmail1" className="form-label">Nombre de usuario</label>
+                        <input type="text" className="form-control" id="exampleInputEmail1" required />
+                      </div>
+                      <div className="mb-3">
+                        <label htmlFor="exampleInputPassword1" className="form-label">Contraseña</label>
+                        <input type="password" className="form-control" id="exampleInputPassword1" required />
+                      </div>
+                      <div className="modal-footer">
+                        <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="submit" className="btn btn-primary btn-custom">Inicia sesión</button>
+                      </div>
+                    </form>
+                  </div>
                 </div>
-                <div className="mb-3">
-                  <label htmlFor="txt2" className="form-label">Dirección</label>
-                  <input type="text" className="form-control" id="txt2" required />
-                </div>
-                <div className="mb-3">
-                  <label htmlFor="txt3" className="form-label">Tipo de documento</label>
-                  <input type="text" className="form-control" id="txt3" required />
-                </div>
-                <div className="mb-3">
-                  <label htmlFor="txt4" className="form-label">Documento</label>
-                  <input type="number" className="form-control" id="txt4" required />
-                </div>
-                <div className="mb-3">
-                  <label htmlFor="txt5" className="form-label">Teléfono</label>
-                  <input type="number" className="form-control" id="txt5" required />
-                </div>
-                <div className="mb-3">
-                  <label htmlFor="txt6" className="form-label">Correo electrónico</label>
-                  <input type="email" className="form-control" id="txt6" required />
-                </div>
-                <div className="modal-footer">
-                  <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                  <button type="submit" className="btn btn-primary btn-custom">Guardar</button>
-                </div>
-              </form>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-      {/* Botón para abrir el modal de inicio de sesión */}
-      <button type="button" className="btn btn-primary btn-custom" data-bs-toggle="modal" data-bs-target="#loginModal">
-        Inicia sesión
-      </button>
-      {/* Modal de inicio de sesión */}
-      <div className="modal fade" id="loginModal" tabIndex={-1} aria-labelledby="loginModalLabel" aria-hidden="true">
-        <div className="modal-dialog">
-          <div className="modal-content">
-            <div className="modal-header">
-              <h1 className="modal-title fs-5" id="loginModalLabel">Inicia sesión</h1>
-              <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
-            </div>
-            <div className="modal-body">
-              <form>
-                <div className="mb-3">
-                  <label htmlFor="exampleInputEmail1" className="form-label">Nombre de usuario</label>
-                  <input type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required />
-                </div>
-                <div className="mb-3">
-                  <label htmlFor="exampleInputPassword1" className="form-label">Contraseña</label>
-                  <input type="password" className="form-control" id="exampleInputPassword1" required />
-                </div>
-                <div className="modal-footer">
-                  <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                  <button type="submit" className="btn btn-primary btn-custom">Inicia sesión</button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
+        </header>
   {/* Carrusel para mostrar productos*/}
   <section>
     <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">
