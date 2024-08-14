@@ -10,6 +10,7 @@ import UsuariosAdmin from "./paginas/auth/usuarios_admin";
 import Productos from "./paginas/auth/productos";
 import VentasAdmin from "./paginas/auth/ventas_admin";
 import DomicilioAdmin from "./paginas/auth/domicilios_admin";
+import Registro from "./paginas/auth/registro";
 function App() {
   return (
     <Fragment>
@@ -24,7 +25,8 @@ function App() {
           <Route path='/usuarios_admin.js' exact element={<UsuariosAdmin/>}/>
           <Route path='/productos.js' exact element={<Productos/>}/>  
           <Route path='/ventas_admin.js' exact element={<VentasAdmin/>}/> 
-          <Route path='/domicilios_admin.js' exact element={<DomicilioAdmin/>}/>        
+          <Route path='/domicilios_admin.js' exact element={<DomicilioAdmin/>}/>
+          <Route path='/registro.js' exact element={<Registro/>}/>         
         </Routes>
       </Router>
     </Fragment>

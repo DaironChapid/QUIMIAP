@@ -2,21 +2,39 @@
   "Users": [
     {
       "id": "1",
-      "nombre_completo": "dairon smith chapid moreno",
-      "direccion": "cr8c#1a26sur",
-      "tipo_doc": "ti",
-      "documento": "1081399564",
-      "telefono": "3202937619",
-      "correo_elec": "morenodairon78@gmail.com"
+      "nombres": "dairon smith",
+      "apellidos": "chapid moreno",
+      "telefono": "3224537890",
+      "correo_electronico": "morenodairon78@gmail.com",
+      "tipo_doc": "CC",
+      "num_doc": "10196055503",
+      "contrasena": "morenodairon78",
+      "genero": "Mujer",
+      "rol": "Cliente"
     },
     {
-      "id": "2030",
-      "nombre_completo": "valery",
-      "direccion": "11111",
-      "tipo_doc": "1081399567",
-      "documento": "5",
-      "telefono": "6",
-      "correo_elec": "43434343@ddd"
+      "id": "",
+      "nombres": "cvcv",
+      "apellidos": "asdasd",
+      "telefono": "231231312",
+      "correo_electronico": "dcvdbv@g.com",
+      "tipo_doc": "Tarjeta de identidad",
+      "num_doc": "1231212312",
+      "contrasena": "12345664",
+      "genero": "Masculino",
+      "rol": ""
+    },
+    {
+      "id": "",
+      "nombres": "asdasdasd",
+      "apellidos": "asdasdasd",
+      "telefono": "21234234234234",
+      "correo_electronico": "dcvdbv@g.com",
+      "tipo_doc": "Cedula de Ciudadania",
+      "num_doc": "123123123",
+      "contrasena": "123123123",
+      "genero": "Masculino",
+      "rol": ""
     }
   ]
 }
