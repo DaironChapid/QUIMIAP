@@ -35,6 +35,18 @@
       "contrasena": "123123123",
       "genero": "Masculino",
       "rol": ""
+    },
+    {
+      "id": "",
+      "nombres": "Santiago",
+      "apellidos": "Perez",
+      "telefono": "311238574859",
+      "correo_electronico": "santi@gmail.com",
+      "tipo_doc": "Cedula de Ciudadania",
+      "num_doc": "1031945849",
+      "contrasena": "santi1234",
+      "genero": "Masculino",
+      "rol": ""
     }
   ]
 }

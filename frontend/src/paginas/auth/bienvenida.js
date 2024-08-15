@@ -10,7 +10,7 @@ const Bienvenida = () =>{
     <div className="container d-flex justify-content-between align-items-center py-3">
       {/* Logo */}
       <div className="header-logo-container">
-        <img src="LOGO_JEFE_DE_PRODUCCIÓN-Photoroom.png" alt="Logo" className="header-logo me-4" />
+      <img src="/img/LOGO_JEFE_DE_PRODUCCIÓN-Photoroom.png" alt="Logaa" className="header-logo me-4" />
       </div>
       {/* Botón de categorías (tres rayitas) */}
       <div className="d-flex align-items-center">
@@ -49,7 +49,7 @@ const Bienvenida = () =>{
             <button type="submit" className="btn btn-primary w-100">Ingresar</button>
           </form>
           <div className="text-center mt-3">
-            <Link to="#">Quiero crear mi cuenta</Link>
+            <Link to="registro.js">Quiero crear mi cuenta</Link>
           </div>
         </div>
       </div>
@@ -124,7 +124,7 @@ const Bienvenida = () =>{
   <div id="mainCarousel" className="carousel slide" data-bs-ride="carousel">
     <div className="carousel-inner">
       <div className="carousel-item active">
-        <img src="carrusel-images/supersale.jpg" className="d-block w-100" alt="Oferta 1" />
+        <img src="/img/carrusel-images/supersale.jpg" className="d-block w-100" alt="Oferta 1" />
         <div className="carousel-caption d-none d-md-block">
           <h5>Hasta 30% de Descuento en Productos de Cuidado de ropa</h5>
           <p>Exclusivo para compras en app, web y domicilios.</p>
@@ -132,7 +132,7 @@ const Bienvenida = () =>{
         </div>
       </div>
       <div className="carousel-item">
-        <img src="../img/carrusel-images/pngtree-sale-promotion-50-off-image_914144.png" className="d-block w-100" alt="Oferta 2" />
+        <img src="/img/carrusel-images/pngtree-sale-promotion-50-off-image_914144.png" className="d-block w-100" alt="Oferta 2" />
         <div className="carousel-caption d-none d-md-block">
           <h5>Hasta 50% de Descuento en Hogar y Limpieza</h5>
           <p>Oferta válida hasta fin de mes.</p>
@@ -203,7 +203,7 @@ const Bienvenida = () =>{
       <div className="row">
         <div className="col-md-3">
           <div className="card product-card">
-            <img src="products-images/producto1.png" className="card-img-top" alt="Suavizante Textil" />
+            <img src="/img/products-images/producto1.png" className="card-img-top" alt="Suavizante Textil" />
             <div className="card-body">
               <h5 className="card-title">Suavizante Textil 1L</h5>
               <p className="card-text"><strong>$20.000</strong></p>
@@ -215,7 +215,7 @@ const Bienvenida = () =>{
         </div>
         <div className="col-md-3">
           <div className="card product-card">
-            <img src="products-images/producto2.jpg" className="card-img-top" alt="Cera Polimérica" />
+            <img src="/img/products-images/producto2.jpg" className="card-img-top" alt="Cera Polimérica" />
             <div className="card-body">
               <h5 className="card-title">Cera Polimérica 750ML</h5>
               <p className="card-text"><strong>$17.000</strong></p>
@@ -227,7 +227,7 @@ const Bienvenida = () =>{
         </div>
         <div className="col-md-3">
           <div className="card product-card">
-            <img src="products-images/producto3.jpg" className="card-img-top" alt="Detergente Líquido" />
+            <img src="/img/products-images/producto3.jpg" className="card-img-top" alt="Detergente Líquido" />
             <div className="card-body">
               <h5 className="card-title">Detergente Líquido 1L</h5>
               <p className="card-text"><strong>$20.000</strong></p>
@@ -239,7 +239,7 @@ const Bienvenida = () =>{
         </div>
         <div className="col-md-3">
           <div className="card product-card">
-            <img src="products-images/ambientador1.jpg" className="card-img-top" alt="Producto 4" />
+            <img src="/img/products-images/ambientador1.jpg" className="card-img-top" alt="Producto 4" />
             <div className="card-body">
               <h5 className="card-title">Multiusos Ambientador </h5>
               <p className="card-text"><strong>$8.99</strong></p>
@@ -258,7 +258,7 @@ const Bienvenida = () =>{
       <div className="row">
         <div className="col-md-3">
           <div className="card product-card">
-            <img src="products-images/tripleaccion.jpg" className="card-img-top" alt="Producto 1" />
+            <img src="/img/products-images/tripleaccion.jpg" className="card-img-top" alt="Producto 1" />
             <div className="card-body">
               <h5 className="card-title">Triple Acción</h5>
               <p className="card-text"><strong>$14.999</strong></p>
@@ -270,7 +270,7 @@ const Bienvenida = () =>{
         </div>
         <div className="col-md-3">
           <div className="card product-card">
-            <img src="products-images/producto6.jpg" className="card-img-top" alt="Producto 2" />
+            <img src="/img/products-images/producto6.jpg" className="card-img-top" alt="Producto 2" />
             <div className="card-body">
               <h5 className="card-title">Desengrasante Industrial 1L</h5>
               <p className="card-text"><strong>$11.500</strong></p>
@@ -282,7 +282,7 @@ const Bienvenida = () =>{
         </div>
         <div className="col-md-3">
           <div className="card product-card">
-            <img src="products-images/lavaloza.jpg" className="card-img-top" alt="Producto 3" />
+            <img src="/img/products-images/lavaloza.jpg" className="card-img-top" alt="Producto 3" />
             <div className="card-body">
               <h5 className="card-title">Lavaloza 1L</h5>
               <p className="card-text"><strong>$13.500</strong></p>
@@ -294,7 +294,7 @@ const Bienvenida = () =>{
         </div>
         <div className="col-md-3">
           <div className="card product-card">
-            <img src="products-images/limpiapisos.jpg" className="card-img-top" alt="Producto 4" />
+            <img src="/img/products-images/limpiapisos.jpg" className="card-img-top" alt="Producto 4" />
             <div className="card-body">
               <h5 className="card-title">Limpiador de pisos y juntas</h5>
               <p className="card-text"><strong>$10.000</strong></p>
@@ -331,7 +331,7 @@ const Bienvenida = () =>{
         <div className="col-md-2">
           <h5>Nosotros</h5>
           <ul className="list-unstyled">
-            <li><Link to="#" className="text-white text-decoration-none">Quiénes somos</Link></li>
+            <li><Link to="nosotros.js" className="text-white text-decoration-none">Quiénes somos</Link></li>
             <li><Link to="#" className="text-white text-decoration-none">Nuestra Historia</Link></li>
             <li><Link to="#" className="text-white text-decoration-none">Trabaja con nosotros</Link></li>
           </ul>

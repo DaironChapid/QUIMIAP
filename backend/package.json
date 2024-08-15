@@ -5,6 +5,6 @@
     "paquete": "^1.0.0"
   },
   "scripts": {
-    "start-api": "json-server --watch trabajo.json --port 4000"
+    "start-api": "json-server --watch trabajo.json --port 4001"
   }
 }
