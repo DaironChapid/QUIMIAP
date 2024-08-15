@@ -35,7 +35,7 @@ const Registro = () => {
   const enviar = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post("http://localhost:4000/Users", formData);
+      const response = await axios.post("http://localhost:4001/Users", formData);
       alert("Éxito:", response.data);
     } catch (error) {
       console.error("Error al enviar los datos:", error);

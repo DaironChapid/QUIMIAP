@@ -1,29 +1,134 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../estilos/style_usuarios.css';
+import axios from 'axios';
 
 const UsuariosAdmin = () => {
+  const [formData, setFormData] = useState({
+    Ref: '',
+    tipo_doc: '',
+    num_doc: '',
+    nombres: '',
+    apellidos: '',
+    correo_electronico: '',
+    genero: '',
+    celular: '',
+    contrasena: '',
+    rol: ''
+  });
 
-  function closeForm() {
-    document.getElementById('formContainer').style.display = 'none';
-    document.querySelectorAll('.navbar, .user-table, h1, .register-button').forEach(function(element) {
-      element.classList.remove('blur-background');
-    });
-  }
+  const [usuarios, setUsuarios] = useState([]);
+  const [isEditing, setIsEditing] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(null);
+
+  useEffect(() => {
+    const fetchUsuarios = async () => {
+      try {
+        const response = await axios.get("http://localhost:4001/Users_Admin");
+        setUsuarios(response.data);
+      } catch (error) {
+        alert("Error al cargar los usuarios:", error);
+      }
+    };
+
+    fetchUsuarios();
+  }, []);
 
   useEffect(() => {
     const registerButton = document.querySelector('.register-button');
-    registerButton.addEventListener('click', function() {
+    const handleClick = () => {
       document.getElementById('formContainer').style.display = 'block';
       document.querySelectorAll('.navbar, .user-table, h1, .register-button').forEach(function(element) {
         element.classList.add('blur-background');
       });
-    });
+    };
+
+    registerButton.addEventListener('click', handleClick);
 
     return () => {
-      // Limpieza del event listener cuando el componente se desmonte
-      registerButton.removeEventListener('click', closeForm);
+      registerButton.removeEventListener('click', handleClick);
     };
   }, []);
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData(prevFormData => ({
+      ...prevFormData,
+      [name]: value
+    }));
+  };
+
+  const closeForm = () => {
+    document.getElementById('formContainer').style.display = 'none';
+    document.querySelectorAll('.navbar, .user-table, h1, .register-button').forEach(function(element) {
+      element.classList.remove('blur-background');
+    });
+  };
+
+  const enviar = async (event) => {
+    event.preventDefault();
+    if (isEditing) {
+      try {
+        await axios.put(`http://localhost:4001/Users_Admin/${formData.Ref}`, formData);
+        const updatedUsuarios = usuarios.map((usuario, index) =>
+          index === currentIndex ? formData : usuario
+        );
+        setUsuarios(updatedUsuarios);
+        alert("Usuario actualizado con éxito");
+        closeForm(); // Cerrar el formulario después de la edición
+      } catch (error) {
+        console.error(error);
+        alert("Error al actualizar el usuario:", error.message || error.toString());
+      }
+    } else {
+      try {
+        const response = await axios.post("http://localhost:4001/Users_Admin", formData);
+        setUsuarios(prevUsuarios => [...prevUsuarios, response.data]);
+        alert("Usuario agregado con éxito");
+        closeForm(); // Cerrar el formulario después de agregar
+      } catch (error) {
+        console.error(error);
+        alert("Error al agregar el usuario:", error.message || error.toString());
+      }
+    }
+    
+    setFormData({
+      Ref: '',
+      tipo_doc: '',
+      num_doc: '',
+      nombres: '',
+      apellidos: '',
+      correo_electronico: '',
+      genero: '',
+      celular: '',
+      contrasena: '',
+      rol: ''
+    });
+  };
+
+  const editarUsuario = (index) => {
+    setFormData(usuarios[index]);
+    setIsEditing(true);
+    setCurrentIndex(index);
+    document.getElementById('formContainer').style.display = 'block';
+    document.querySelectorAll('.navbar, .user-table, h1, .register-button').forEach(function(element) {
+      element.classList.add('blur-background');
+    });
+  };
+  const eliminarUsuario = async (index) => {
+    try {
+      const usuario = usuarios[index];
+      console.log(`Eliminando usuario con Ref: ${usuario.Ref}`);
+      await axios.delete(`http://localhost:4001/Users_Admin/${usuario.Ref}`);
+      
+      const updatedUsuarios = usuarios.filter((_, i) => i !== index);
+      setUsuarios(updatedUsuarios);
+      
+      alert("Usuario eliminado con éxito");
+    } catch (error) {
+      console.error(error.response || error.message);
+      alert("Error al eliminar el usuario:", error.message || error.toString());
+    }
+  };
 
   return (
     <div>
@@ -33,9 +138,7 @@ const UsuariosAdmin = () => {
             <img src="https://i.ibb.co/dbTBHkz/LOGO-JEFE-DE-PRODUCCI-N.jpg" alt="LOGO-JEFE-DE-PRODUCCI-N" className="logo"/>
           </div>
           <div className="small-image">
-          <div>
             <img src="https://i.ibb.co/XyscBHp/pngtree-users-vector-icon-png-image-3725294.jpg" alt="pngtree-users-vector-icon-png-image-3725294" border={0} /><span>Gerente</span>
-          </div>
           </div>
           <ul className="links">
             <li><a href="usuarios_admin.js">Usuarios</a></li>
@@ -52,52 +155,143 @@ const UsuariosAdmin = () => {
         <thead>
           <tr>
             <th>Ref #</th>
-            <th>Nombre Completo</th>
             <th>Tipo de Documento</th>
-            <th>Documento</th>
-            <th>Correo Electrónico</th>
-            <th>Dirección</th>
+            <th>N° Identificacion</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Correo Electronico</th>
+            <th>Genero</th>
+            <th>Celular</th>
+            <th>Contraseña</th>
             <th>Rol</th>
-            <th>Teléfono</th>
             <th>Acción</th>
           </tr>
         </thead>
         <tbody>
-          {/* Los datos de las filas deben estar mapeados dinámicamente */}
-          <tr>
-            <td>1</td>
-            <td>miguel</td>
-            <td>Cédula</td>
-            <td>123458689</td>
-            <td>miguelito123@example.com</td>
-            <td>Calle Falsa 123</td>
-            <td>Administrador</td>
-            <td>3001234567</td>
-            <td>
-              <button className="edit-button">🖋️</button>
-              <button className="delete-button">🗑️</button>
-            </td>
-          </tr>
+          {usuarios.map((usuario, index) => (
+            <tr key={index}>
+              <td>{index + 1}</td>
+              <td>{usuario.tipo_doc}</td>
+              <td>{usuario.num_doc}</td>
+              <td>{usuario.nombres}</td>
+              <td>{usuario.apellidos}</td>
+              <td>{usuario.correo_electronico}</td>
+              <td>{usuario.genero}</td>
+              <td>{usuario.celular}</td>
+              <td>{usuario.contrasena}</td>
+              <td>{usuario.rol}</td>
+              <td>
+                <button className="edit-button" onClick={() => editarUsuario(index)}>🖋️</button>
+                <button className="delete-button" onClick={() => eliminarUsuario(index)}>🗑️</button>
+              </td>
+            </tr>
+          ))}
         </tbody>
       </table>
       <div className="form-container" id="formContainer">
         <button className="close-btn" onClick={closeForm}>×</button>
-        <form className="user-form" id="userForm">
-          <label htmlFor="fullName">Nombre Completo:</label>
-          <input type="text" id="fullName" name="fullName" required />
-          <label htmlFor="address">Dirección:</label>
-          <input type="text" id="address" name="address" required />
-          <label htmlFor="role">Rol:</label>
-          <input type="text" id="role" name="role" required />
-          <label htmlFor="documentType">Tipo de Documento:</label>
-          <input type="text" id="documentType" name="documentType" required />
-          <label htmlFor="document">Documento:</label>
-          <input type="text" id="document" name="document" required />
-          <label htmlFor="phone">Teléfono:</label>
-          <input type="tel" id="phone" name="phone" required />
-          <label htmlFor="email">Correo Electrónico:</label>
-          <input type="email" id="email" name="email" required />
-          <button type="submit">Agregar</button>
+        <form className="user-form" id="userForm" onSubmit={enviar}>
+          <label htmlFor="tipo_doc">Tipo De Documento</label>
+          <select 
+            id="tipo_doc"
+            name="tipo_doc"
+            value={formData.tipo_doc}
+            onChange={handleChange}
+            required
+          >
+            <option value="" disabled>Seleccione una opcion</option>
+            <option value="Tarjeta de identidad">Tarjeta de identidad</option>
+            <option value="Cedula de Ciudadania">Cedula de Ciudadania</option>
+            <option value="Cedula de extranjeria">Cedula de extranjeria</option>
+          </select>
+
+          <label htmlFor="num_doc">N° Identificacion</label>
+          <input 
+            type="number" 
+            value={formData.num_doc} 
+            onChange={handleChange}
+            id="num_doc" 
+            name="num_doc" 
+            required 
+          />
+
+          <label htmlFor="nombres">Nombre</label>
+          <input 
+            type="text"
+            value={formData.nombres}
+            onChange={handleChange}
+            id="nombres" 
+            name="nombres" 
+            required 
+          />
+
+          <label htmlFor="apellidos">Apellido</label>
+          <input 
+            type="text" 
+            id="apellidos" 
+            name="apellidos"
+            value={formData.apellidos}
+            onChange={handleChange}
+            required 
+          />
+
+          <label htmlFor="correo_electronico">Correo Electronico</label>
+          <input 
+            type="email" 
+            value={formData.correo_electronico}
+            onChange={handleChange}
+            id="correo_electronico" 
+            name="correo_electronico" 
+            required 
+          />
+
+          <label htmlFor="genero">Genero</label>
+          <select 
+            id="genero"
+            name="genero"
+            value={formData.genero}
+            onChange={handleChange}
+            required
+          >
+            <option value="" disabled>Seleccione una opcion</option>
+            <option value="Femenino">Femenino</option>
+            <option value="Masculino">Masculino</option>
+          </select>
+
+          <label htmlFor="celular">Celular</label>
+          <input 
+            type="number" 
+            value={formData.celular}
+            onChange={handleChange}
+            id="celular" 
+            name="celular" 
+            required 
+          />
+
+          <label htmlFor="contrasena">Contraseña</label>
+          <input 
+            type="password"
+            value={formData.contrasena}
+            onChange={handleChange}
+            id="contrasena" 
+            name="contrasena" 
+            required 
+          />
+
+          <label htmlFor="rol">Rol</label>
+          <select 
+            id="rol"
+            name="rol"
+            value={formData.rol}
+            onChange={handleChange}
+            required
+          >
+            <option value="" disabled>Seleccione una opcion</option>
+            <option value="Gerente">Gerente</option>
+            <option value="jefe de producción">jefe de producción</option>
+            <option value="Domiciliario">Domiciliario</option>
+          </select>
+          <button type="submit">{isEditing ? 'Actualizar' : 'Agregar'}</button>
         </form>
       </div>
     </div>

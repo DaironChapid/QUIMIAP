@@ -14,39 +14,43 @@
     },
     {
       "id": "",
-      "nombres": "cvcv",
-      "apellidos": "asdasd",
-      "telefono": "231231312",
-      "correo_electronico": "dcvdbv@g.com",
-      "tipo_doc": "Tarjeta de identidad",
-      "num_doc": "1231212312",
-      "contrasena": "12345664",
-      "genero": "Masculino",
+      "nombres": "laura",
+      "apellidos": "albararcin",
+      "telefono": "32452727",
+      "correo_electronico": "laura@gmail.om",
+      "tipo_doc": "Cedula de Ciudadania",
+      "num_doc": "10985456",
+      "contrasena": "jahajmaavnhaah",
+      "genero": "Femenino",
       "rol": ""
+    }
+  ],
+  "Users_Admin": [
+    {
+      "Ref": "1",
+      "tipo_doc": "Cedula de Ciudadania",
+      "num_doc": "1081399564",
+      "nombres": "dairon smith",
+      "apellidos": "chapid moreno",
+      "correo_electronico": "morenodairon78@gmail.com",
+      "genero": "masculino",
+      "celular": "3202937619",
+      "contraseña": "dairon123",
+      "rol": "",
+      "id": "6ac3"
     },
     {
-      "id": "",
-      "nombres": "asdasdasd",
-      "apellidos": "asdasdasd",
-      "telefono": "21234234234234",
-      "correo_electronico": "dcvdbv@g.com",
+      "id": "e8d9",
+      "Ref": "",
       "tipo_doc": "Cedula de Ciudadania",
-      "num_doc": "123123123",
-      "contrasena": "123123123",
-      "genero": "Masculino",
-      "rol": ""
-    },
-    {
-      "id": "",
-      "nombres": "Santiago",
-      "apellidos": "Perez",
-      "telefono": "311238574859",
-      "correo_electronico": "santi@gmail.com",
-      "tipo_doc": "Cedula de Ciudadania",
-      "num_doc": "1031945849",
-      "contrasena": "santi1234",
-      "genero": "Masculino",
-      "rol": ""
+      "num_doc": "1014198965",
+      "nombres": "lau",
+      "apellidos": "alba",
+      "correo_electronico": "laura@gmail.om",
+      "genero": "Femenino",
+      "celular": "62637535",
+      "contrasena": "zlxjcj",
+      "rol": "jefe de producción"
     }
   ]
 }
