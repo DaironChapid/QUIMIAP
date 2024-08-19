@@ -54,7 +54,7 @@ const Bienvenida = () =>{
         </div>
       </div>
       {/* Ícono de carrito de compras */}
-      <Link to="#" className="text-success ms-3">
+      <Link to="./carrito.js" className="text-success ms-3">
         <i className="bi bi-cart3 fs-4" />
       </Link>
     </div>
