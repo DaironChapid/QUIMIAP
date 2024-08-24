@@ -11,11 +11,11 @@ import Productos from "./paginas/auth/productos";
 import VentasAdmin from "./paginas/auth/ventas_admin";
 import DomicilioAdmin from "./paginas/auth/domicilios_admin";
 import Registro from "./paginas/auth/registro";
-import { CarritoProvider } from './paginas/auth/CarritoContext'; // Solo importa el proveedor aquí
+
 
 function App() {
   return (
-    <CarritoProvider>
+    
       <Router>
         <Routes>
           <Route path='/' element={<Bienvenida />} />
@@ -31,7 +31,7 @@ function App() {
           <Route path='/registro.js' element={<Registro />} />
         </Routes>
       </Router>
-    </CarritoProvider>
+   
   );
 }
 

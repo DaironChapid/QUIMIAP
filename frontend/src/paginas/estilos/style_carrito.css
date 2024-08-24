@@ -1,31 +1,32 @@
 /* General Styles */
 body {
     background-color: #f4f4f9;
-    font-family: 'Roboto', sans-serif; /* Fuente moderna */
+    font-family: 'Roboto', sans-serif;
     color: #333;
 }
 
 h1 {
     font-size: 2.5rem;
-    color: #2c3e50; /* Color más oscuro para mejor contraste */
+    color: #2c3e50;
     margin-bottom: 1rem;
+    text-align: center;
 }
 
 .table-hover tbody tr:hover {
-    background-color: #e9ecef; /* Color más sutil para hover */
+    background-color: #e2e6ea; /* Color más sutil para hover */
 }
 
 .img-thumbnail {
-    width: 60px; /* Tamaño un poco mayor para mejor visibilidad */
-    height: 60px;
-    object-fit: cover; /* Mantiene la proporción de la imagen */
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
     border-radius: 4px;
 }
 
 .table thead th {
     text-align: center;
-    background-color: #28a745; /* Color de fondo del encabezado */
-    color: white; /* Texto blanco para contraste */
+    background-color: #28a745;
+    color: white;
 }
 
 .table tbody td {
@@ -34,41 +35,42 @@ h1 {
 }
 
 .table tbody td img {
-    max-width: 80px; /* Tamaño mejorado para mejor visibilidad */
+    max-width: 90px;
     height: auto;
 }
 
 .card {
-    border-radius: 12px; /* Bordes más suaves */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Sombra más sutil */
-    border: 1px solid #e0e0e0; /* Borde sutil para las tarjetas */
-    transition: box-shadow 0.3s ease; /* Transición suave */
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e0e0e0;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .card:hover {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Efecto al pasar el mouse */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px); /* Efecto de elevación */
 }
 
 .btn-block {
     width: 100%;
-    margin-top: 15px; /* Espaciado mejorado */
+    margin-top: 1rem; /* Mejor espaciado */
 }
 
 .card-header {
-    font-size: 1.25rem; /* Tamaño de fuente ligeramente mayor */
-    background-color: #28a745; /* Color de fondo coherente */
+    font-size: 1.25rem;
+    background-color: #28a745;
     color: white;
-    border-bottom: 1px solid #e0e0e0; /* Borde sutil para el encabezado */
+    border-bottom: 1px solid #e0e0e0;
 }
 
 .card-body p {
     font-size: 1rem;
-    margin-bottom: 10px; /* Espaciado mejorado */
+    margin-bottom: 1rem; /* Mejor espaciado */
 }
 
 .btn-danger, .btn-success {
-    border-radius: 4px; /* Bordes redondeados para botones */
-    transition: background-color 0.3s ease, border-color 0.3s ease; /* Transición suave */
+    border-radius: 4px;
+    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
 }
 
 .btn-danger {
@@ -77,8 +79,9 @@ h1 {
 }
 
 .btn-danger:hover {
-    background-color: #c82333; /* Color de hover */
+    background-color: #c82333;
     border-color: #bd2130;
+    transform: scale(1.05); /* Efecto de zoom al hacer hover */
 }
 
 .btn-success {
@@ -87,8 +90,9 @@ h1 {
 }
 
 .btn-success:hover {
-    background-color: #218838; /* Color de hover */
+    background-color: #218838;
     border-color: #1e7e34;
+    transform: scale(1.05); /* Efecto de zoom al hacer hover */
 }
 
 html, body {
@@ -104,7 +108,7 @@ html, body {
 
 main {
     flex: 1;
-    padding: 0 15px; /* Espaciado en el contenedor principal */
+    padding: 0 20px; /* Mejor espaciado */
 }
 
 footer {
@@ -112,5 +116,35 @@ footer {
     color: white;
     padding: 20px;
     text-align: center;
-    margin-top: auto; /* Asegura que el footer se mantenga al final del contenido */
+    margin-top: auto;
+}
+
+/* Estilos específicos para la funcionalidad del carrito */
+.cantidad-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cantidad-btn {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    color: #495057;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem; /* Mejor espaciado entre botones */
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s, transform 0.2s;
+}
+
+.cantidad-btn:hover {
+    background-color: #e2e6ea;
+    color: #212529;
+    transform: scale(1.1); /* Efecto de zoom al hacer hover */
+}
+
+.cantidad-number {
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0 0.75rem; /* Mejor espaciado */
 }

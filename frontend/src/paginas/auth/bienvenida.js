@@ -20,23 +20,22 @@ import CarritoContext from './CarritoContext'; // Asegúrate de que la ruta sea 
 //   }
 // };
 
-
 const Producto = ({ producto, precio }) => {
-  const { agregarProducto } = useContext(CarritoContext);
+  const { agregarAlCarrito } = useContext(CarritoContext);
 
-  const agregarAlcarrito = async (producto) => {
-      try {
-          await axios.post('http://localhost:4001/Carrito', producto, {
-              headers: {
-                  'Content-Type': 'application/json'
-              }
-          });
-          agregarProducto(producto);
-          alert('Producto agregado al carrito');
-      } catch (error) {
-          console.error('Error al agregar el producto al carrito:', error);
-          alert('Error al agregar el producto');
-      }
+  const agregarProductoAlCarrito = async (producto) => {
+    try {
+      await axios.post('http://localhost:4001/Carrito', producto, {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+      agregarAlCarrito(producto);  // Asegúrate de llamar a la función correcta
+      alert('Producto agregado al carrito');
+    } catch (error) {
+      console.error('Error al agregar el producto al carrito:', error);
+      alert('Error al agregar el producto');
+    }
   };
 
   return (
@@ -65,7 +64,7 @@ const Producto = ({ producto, precio }) => {
                   <p className="card-text"><strong>$20.000</strong></p>
                   <button
                     className="btn btn-outline-primary"
-                    onClick={() => agregarAlcarrito({ producto: 'Suavizante Textil 1L', precio: '$20.000' })}
+                    onClick={() => agregarProductoAlCarrito({ producto: 'Suavizante Textil 1L', precio: '$20.000' })}
                   >
                     <i className="bi bi-cart" /> Agregar
                   </button>
@@ -80,7 +79,7 @@ const Producto = ({ producto, precio }) => {
                   <p className="card-text"><strong>$17.000</strong></p>
                   <button
                     className="btn btn-outline-primary"
-                    onClick={() => agregarAlcarrito({ producto: 'Cera Polimérica 750ML', precio: '$17.000' })}
+                    onClick={() => agregarProductoAlCarrito({ producto: 'Cera Polimérica 750ML', precio: '$17.000' })}
                   >
                     <i className="bi bi-cart" /> Agregar
                   </button>
@@ -95,7 +94,7 @@ const Producto = ({ producto, precio }) => {
                   <p className="card-text"><strong>$20.000</strong></p>
                   <button
                     className="btn btn-outline-primary"
-                    onClick={() => agregarAlcarrito({ producto: 'Detergente Líquido 1L', precio: '$20.000' })}
+                    onClick={() => agregarProductoAlCarrito({ producto: 'Detergente Líquido 1L', precio: '$20.000' })}
                   >
                     <i className="bi bi-cart" /> Agregar
                   </button>
@@ -110,7 +109,7 @@ const Producto = ({ producto, precio }) => {
                   <p className="card-text"><strong>$8.99</strong></p>
                   <button
                     className="btn btn-outline-primary"
-                    onClick={() => agregarAlcarrito({ producto: 'Multiusos Ambientador', precio: '$8.99' })}
+                    onClick={() =>agregarProductoAlCarrito({ producto: 'Multiusos Ambientador', precio: '$8.99' })}
                   >
                     <i className="bi bi-cart" /> Agregar
                   </button>
@@ -132,7 +131,7 @@ const Producto = ({ producto, precio }) => {
               <h5 className="card-title">Triple Acción</h5>
               <p className="card-text"><strong>$14.999</strong></p>
               <button className="btn btn-outline-primary"
-              onClick={() => agregarAlcarrito({ producto: 'Triple Accion', precio: '$14.999' })}>
+              onClick={() => agregarProductoAlCarrito({ producto: 'Triple Accion', precio: '$14.999' })}>
               <i className="bi bi-cart" /> Agregar
               </button>
             </div>
@@ -145,7 +144,7 @@ const Producto = ({ producto, precio }) => {
               <h5 className="card-title">Desengrasante Industrial 1L</h5>
               <p className="card-text"><strong>$11.500</strong></p>
               <button  className="btn btn-outline-primary" 
-              onClick={() => agregarAlcarrito({ producto: 'Desengrasante Industrial', precio: '$11.500' })}>
+              onClick={() => agregarProductoAlCarrito({ producto: 'Desengrasante Industrial', precio: '$11.500' })}>
                 <i className="bi bi-cart" /> Agregar
               </button>
             </div>
@@ -158,7 +157,7 @@ const Producto = ({ producto, precio }) => {
               <h5 className="card-title">Lavaloza 1L</h5>
               <p className="card-text"><strong>$13.500</strong></p>
               <button className="btn btn-outline-primary"
-               onClick={() => agregarAlcarrito({ producto: 'Lavaloza 1L', precio: '$13.500' })}>
+               onClick={() => agregarProductoAlCarrito({ producto: 'Lavaloza 1L', precio: '$13.500' })}>
                 <i className="bi bi-cart" /> Agregar
               </button>
             </div>
@@ -171,7 +170,7 @@ const Producto = ({ producto, precio }) => {
               <h5 className="card-title">Limpiador de pisos y juntas</h5>
               <p className="card-text"><strong>$10.000</strong></p>
               <button className="btn btn-outline-primary"
-               onClick={() => agregarAlcarrito({ producto: 'Limpiador de pisos y juntas', precio: '$10.000' })}>
+               onClick={() => agregarProductoAlCarrito({ producto: 'Limpiador de pisos y juntas', precio: '$10.000' })}>
                 <i className="bi bi-cart" /> Agregar
               </button>
             </div>
